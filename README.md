@@ -1,4 +1,4 @@
 CAG
 ===
 
-Basic computational algebraic geometry library
+Basic computational algebraic geometry template library

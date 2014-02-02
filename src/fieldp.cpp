@@ -1,14 +1,15 @@
 /*__________________________________________________________________________________________________
 
-        autor: Pedro Guarderas
-        email: ajusworkopensource@gmail.com
-        date: 2012-12-08
-        file: fieldp.cpp
-
-    This program is free software; you can redistribute it and/or modify it under the terms of the
-    GNU General Public License as published by the Free Software Foundation; either version 2 of the
-    License, or (at your option) any later version.
-  ________________________________________________________________________________________________*/
+		autor: Pedro Guarderas
+		email: ajusworkopensource@gmail.com
+		date: 08-12-2012
+		file: field.cpp
+ 
+	This program is free software; you can redistribute it and/or modify it under the 
+	terms of the GNU General Public License as published by the Free Software Foundation; 
+	either version 2 of the License, or (at your option) any later version.
+____________________________________________________________________________________________________
+*/
 
 #include "fieldp.hpp"
 

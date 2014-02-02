@@ -1,17 +1,4 @@
 #___________________________________________________________________________________________________
-# 
-#  autor: Pedro Guarderas
-#  email: ajusworkopensource@gmail.com
-#  date: 02-02-2014
-#  file: CMakeLists.txt
-#
-#  This program is free software; you can redistribute it and/or modify it under the 
-#  terms of the GNU General Public License as published by the Free Software Foundation; 
-#  either version 2 of the License, or (at your option) any later version.
-#___________________________________________________________________________________________________
-
-
-#___________________________________________________________________________________________________
 # Files
 set( TEST_SRCS
   main.cpp
