@@ -11,6 +11,7 @@
   __________________________________________________________________________________________________
 */
 
+#include "ideal.hpp"
 
 template< typename Monomial_Order, typename Ring >
 Ideal< Monomial_Order, Ring > Ideal< Monomial_Order, Ring >::LT() const

@@ -18,9 +18,7 @@
 #include "polynome.hpp"
 
 /*__________________________________________________________________________________________________
-
-  Ideal class
-
+ *	Ideal class
  */
 template< typename Monomial_Order = grl_order, typename Ring = float > 
 class Ideal : public std::vector< Polynome< Monomial_Order, Ring > > 

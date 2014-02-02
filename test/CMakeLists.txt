@@ -2,7 +2,7 @@
 # 
 #  autor: Pedro Guarderas
 #  email: ajusworkopensource@gmail.com
-#  date: 11-05-2013
+#  date: 02-02-2014
 #  file: CMakeLists.txt
 #
 #  This program is free software; you can redistribute it and/or modify it under the 
@@ -13,37 +13,31 @@
 
 #___________________________________________________________________________________________________
 # Files
-set( CAG_SRCS
-	unitary_monomial.cpp
-	)
+set( TEST_SRCS
+  main.cpp
+  )
 
-set( CAG_HDRS
-	ideal.hpp
-	polynome.hpp
-	unitary_monomial.hpp
-	)
+# set( TEST_HDRS
+#   )
 
 #___________________________________________________________________________________________________
 # Build
 include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}
+  ../src
   .
   )
 
 #___________________________________________________________________________________________________
-# Adding cag library
-add_library( cag MODULE 
-  ${CAG_SRCS}
-  ${CAG_HDRS}
-  )
-  
-target_link_libraries( cag )
+# Adding executable 
+add_executable( test ${TEST_SRCS} ${TEST_HDRS} )
+
+target_link_libraries( test cag )
 
 #___________________________________________________________________________________________________
 # Install
-install( TARGETS cag
-# 	LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}
-	ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
+install( TARGETS test
+  RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/test
   )
 

@@ -25,39 +25,39 @@ set( CMAKE_SYSTEM_NAME Generic )
 
 #___________________________________________________________________________________________________
 # Find LLVM
-find_package( LLVM )
+# find_package( LLVM )
+# 
+# if( LLVM_FOUND )
+#   set( CMAKE_C_COMPILER             ${CLANG} )
+#   set( CMAKE_C_FLAGS                "-Wall")
+#   set( CMAKE_C_FLAGS_DEBUG          "-g")
+#   set( CMAKE_C_FLAGS_MINSIZEREL     "-Os -DNDEBUG")
+#   set( CMAKE_C_FLAGS_RELEASE        "-O4 -DNDEBUG")
+#   set( CMAKE_C_FLAGS_RELWITHDEBINFO "-O2 -g")
+#   
+#   set( CMAKE_CXX_COMPILER             ${CLANG_PLUS} )
+#   set( CMAKE_CXX_FLAGS                "-Wall -std=c++11")
+#   set( CMAKE_CXX_FLAGS_DEBUG          "-g")
+#   set( CMAKE_CXX_FLAGS_MINSIZEREL     "-Os -DNDEBUG")
+#   set( CMAKE_CXX_FLAGS_RELEASE        "-O4 -DNDEBUG")
+#   set( CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g")
+#   
+#   set( CMAKE_AR "/usr/bin/llvm-ar" )
+#   set( CMAKE_LINKER "/usr/bin/llvm-ld" )
+#   set( CMAKE_RANLIB "/usr/bin/llvm-ranlib" )
+#   set( CMAKE_NM "/usr/bin/llvm-nm" )
+#   set( CMAKE_OBJDUMP "/usr/bin/llvm-objdump" )
+#   #set(CMAKE_C_LINKER ${LLVM_LD} )
+#   #set(CMAKE_CXX_LINKER ${LLVM_LD} )
+#   
+#   #set(CMAKE_C_LINK_EXECUTABLE "/usr/bin/llvm-ld <OBJECTS> -o  <TARGET> <CMAKE_C_LINK_FLAGS> <LINK_FLAGS> <LINK_LIBRARIES>")
+#   #set(CMAKE_CXX_LINK_EXECUTABLE "/usr/bin/llvm-ld <OBJECTS> -o  <TARGET> <CMAKE_CXX_LINK_FLAGS> <LINK_FLAGS> <LINK_LIBRARIES>")
+#   
+# else( LLVM_FOUND )
+#   message( SEND_ERROR "LLVM don't work" )
+# endif( LLVM_FOUND )
 
-if( LLVM_FOUND )
-  set( CMAKE_C_COMPILER             ${CLANG} )
-  set( CMAKE_C_FLAGS                "-Wall")
-  set( CMAKE_C_FLAGS_DEBUG          "-g")
-  set( CMAKE_C_FLAGS_MINSIZEREL     "-Os -DNDEBUG")
-  set( CMAKE_C_FLAGS_RELEASE        "-O4 -DNDEBUG")
-  set( CMAKE_C_FLAGS_RELWITHDEBINFO "-O2 -g")
-  
-  set( CMAKE_CXX_COMPILER             ${CLANG_PLUS} )
-  set( CMAKE_CXX_FLAGS                "-Wall -std=c++11")
-  set( CMAKE_CXX_FLAGS_DEBUG          "-g")
-  set( CMAKE_CXX_FLAGS_MINSIZEREL     "-Os -DNDEBUG")
-  set( CMAKE_CXX_FLAGS_RELEASE        "-O4 -DNDEBUG")
-  set( CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g")
-  
-  set( CMAKE_AR "/usr/bin/llvm-ar" )
-  set( CMAKE_LINKER "/usr/bin/llvm-ld" )
-  set( CMAKE_RANLIB "/usr/bin/llvm-ranlib" )
-  set( CMAKE_NM "/usr/bin/llvm-nm" )
-  set( CMAKE_OBJDUMP "/usr/bin/llvm-objdump" )
-  #set(CMAKE_C_LINKER ${LLVM_LD} )
-  #set(CMAKE_CXX_LINKER ${LLVM_LD} )
-  
-  #set(CMAKE_C_LINK_EXECUTABLE "/usr/bin/llvm-ld <OBJECTS> -o  <TARGET> <CMAKE_C_LINK_FLAGS> <LINK_FLAGS> <LINK_LIBRARIES>")
-  #set(CMAKE_CXX_LINK_EXECUTABLE "/usr/bin/llvm-ld <OBJECTS> -o  <TARGET> <CMAKE_CXX_LINK_FLAGS> <LINK_FLAGS> <LINK_LIBRARIES>")
-  
-else( LLVM_FOUND )
-  message( SEND_ERROR "LLVM don't work" )
-endif( LLVM_FOUND )
-
-project( polynome )
+project( cag )
 
 set( CMAKE_COLOR_MAKEFILE ON )
 #CMAKE_FORCE_C_COMPILER ( /usr/bin/clang clang )
@@ -85,35 +85,5 @@ endif( CMAKE_BUILD_TYPE MATCHES Debug )
 add_definitions( -std=c++11 )
 
 #___________________________________________________________________________________________________
-# Files
-set( POLYNOME_SRCS
-  main.cpp
-  unitary_monomial.cpp
-  #  ${CMAKE_CURRENT_BINARY_DIR}/Parser.cpp
-  #  ${CMAKE_CURRENT_BINARY_DIR}/Scanner.cpp
-  )
-
-set( POLYNOME_HDRS
-#  fieldp.hpp
-  ideal.hpp
-  polynome.hpp
-  unitary_monomial.hpp
-  #  ${CMAKE_CURRENT_BINARY_DIR}/Parser.h
-  #  ${CMAKE_CURRENT_BINARY_DIR}/Scanner.h
-  )
-
-#___________________________________________________________________________________________________
-# Build
-include_directories(
-  ${CMAKE_CURRENT_BINARY_DIR}
-  ${CMAKE_CURRENT_SOURCE_DIR}
-  .
-  )
-
-#___________________________________________________________________________________________________
-# Adding executable
-add_executable( polynome ${POLYNOME_SRCS} ${POLYNOME_HDRS} )
-
-#___________________________________________________________________________________________________
-# Install
-install( TARGETS polynome RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX} )
+# Include Subdirectories
+subdirs( src test )
