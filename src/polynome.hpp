@@ -26,9 +26,7 @@ ________________________________________________________________________________
 
 
 /*__________________________________________________________________________________________________
- * 
- *	Funcional objects ( operators ) for monomial comparation
- * 
+ *		Funcional objects ( operators ) for monomial comparation
  */
 struct Monomial_Order_Operator : 
 public std::binary_function< Unitary_Monomial, Unitary_Monomial, bool > 
@@ -37,7 +35,7 @@ public std::binary_function< Unitary_Monomial, Unitary_Monomial, bool >
 };
 
 /*__________________________________________________________________________________________________
- *  Pure lexicographic functional object 
+ *		Pure lexicographic functional object 
  */
 struct pl_order
 {
@@ -68,7 +66,7 @@ struct pl_order
 };
 
 /*__________________________________________________________________________________________________
- *  Graded lexicographic functional object 
+ *		Graded lexicographic functional object 
  */
 struct gl_order
 {
@@ -99,7 +97,7 @@ struct gl_order
 };
 
 /*__________________________________________________________________________________________________
- *   Graded reverse lexicographic functional object
+ *		Graded reverse lexicographic functional object
  */
 struct grl_order
 {
@@ -131,9 +129,7 @@ struct grl_order
 
 
 /*__________________________________________________________________________________________________
- * 
- *	Polynome class
- * 
+ *		Polynome class
  */
 template< typename Monomial_Order = grl_order, typename Ring = float >
 class Polynome
@@ -194,9 +190,7 @@ private:
 };
 
 /*__________________________________________________________________________________________________
- * 
- *  Definition of operators
- * 
+ *		Definition of operators
  */
 template< typename Monomial_Order, typename Ring >
 std::ostream& operator<< ( std::ostream& out, const Polynome< Monomial_Order, Ring >& x );
@@ -261,6 +255,9 @@ template< typename Monomial_Order, typename Ring >
 Polynome< Monomial_Order, Ring > S_polynomial( const Polynome< Monomial_Order, Ring >& x,
                                                const Polynome< Monomial_Order, Ring >& y );
 
+/*__________________________________________________________________________________________________
+ *		Include for template compilation
+ */
 #include "polynome.cpp"
 
 #endif // POLYNOME

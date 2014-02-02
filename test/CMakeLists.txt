@@ -40,4 +40,3 @@ target_link_libraries( test cag )
 install( TARGETS test
   RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/test
   )
-

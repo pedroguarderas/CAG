@@ -1333,7 +1333,9 @@ bool grl_order::geq::operator()( const Unitary_Monomial& x, const Unitary_Monomi
 	return test;
 }
 
-//__________________________________________________________________________________________________
+/*__________________________________________________________________________________________________
+ *		Polynome class
+ */
 template< typename Monomial_Order, typename Ring >
 Polynome< Monomial_Order, Ring >::Polynome()
 {

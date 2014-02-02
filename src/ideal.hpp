@@ -18,19 +18,22 @@ ________________________________________________________________________________
 #include "polynome.hpp"
 
 /*__________________________________________________________________________________________________
- *	Ideal class
+ *		Ideal class
  */
 template< typename Monomial_Order = grl_order, typename Ring = float > 
 class Ideal : public std::vector< Polynome< Monomial_Order, Ring > > 
 {
 public:
-    Ideal< Monomial_Order, Ring > LT() const;
+	Ideal< Monomial_Order, Ring > LT() const;
 };
 
 template< typename Monomial_Order, typename Ring >
 std::pair< Polynome< Monomial_Order, Ring >, Polynome< Monomial_Order, Ring > >
 operator/ ( const Polynome< Monomial_Order, Ring >& x, const Ideal< Monomial_Order, Ring >& I );
 
+/*__________________________________________________________________________________________________
+ *		Include for template compilation
+ */
 #include "ideal.cpp"
 
 #endif // IDEAL
