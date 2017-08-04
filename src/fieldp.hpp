@@ -1,13 +1,13 @@
 /*__________________________________________________________________________________________________
 
-		autor: Pedro Guarderas
-		email: ajusworkopensource@gmail.com
-		date: 08-12-2012
-		file: field.hpp
+    autor: Pedro Guarderas
+    email: ajusworkopensource@gmail.com
+    date: 08-12-2012
+    file: field.hpp
  
-	This program is free software; you can redistribute it and/or modify it under the 
-	terms of the GNU General Public License as published by the Free Software Foundation; 
-	either version 2 of the License, or (at your option) any later version.
+  This program is free software; you can redistribute it and/or modify it under the 
+  terms of the GNU General Public License as published by the Free Software Foundation; 
+  either version 2 of the License, or (at your option) any later version.
 ____________________________________________________________________________________________________
 */
 
@@ -20,64 +20,64 @@ ________________________________________________________________________________
 #include <vector>
 
 /*__________________________________________________________________________________________________
- *		Error test prime class
+ *    Error test prime class
  */
 template< typename Z = int >
 class PrimeTest {
 public:
-	PrimeTest( const Z& );
-	~PrimeTest();
-	
-	const Z* _p;
+  PrimeTest( const Z& );
+  ~PrimeTest();
+  
+  const Z* _p;
 };
 
 std::ostream& operator << ( std::ostream& out, const PrimeTest& PT  ) {
-	out << "Prime Test Fail for: " <<  PT._p << std::endl;
+  out << "Prime Test Fail for: " <<  PT._p << std::endl;
 }
 
 
 /*__________________________________________________________________________________________________
- *		Prime Field
+ *    Prime Field
  */
 template< typename Z = int >
 class PrimeField {
 public:
-	PrimeField( const Z& p );
-	~PrimeField();
-	
+  PrimeField( const Z& p );
+  ~PrimeField();
+  
 private:
-	static const Z prime;
-	unsigned char n : sizeof(Z);
+  static const Z prime;
+  unsigned char n : sizeof(Z);
 };
 
 // Based in AKS algorithm
 template< typename Sqrt, typename Log, typename Z = int >
 bool test_prime( const Z& n, std::vector< Z >& plist ) {
-	bool test = true;
-	Z a = Z( 2 );
-	
-	for ( ; a < Sqrt( n ); a++ ) {
-		if ( n % a == Z( 0 ) ) {
-			test = false;
-			break;
-		}
-	}
-	
-	a = Z( 2 );
-	if ( test ) {
-		while ( a < n ) {
-			if ( GCD( n, a ) == Z( 1 ) ) {
-				if ( a > Z( 2 ) ) {
-					
-				}
-			}
-			else {
-				test = false;
-				break;
-			}
-		}
-	}
-	return test;
+  bool test = true;
+  Z a = Z( 2 );
+  
+  for ( ; a < Sqrt( n ); a++ ) {
+    if ( n % a == Z( 0 ) ) {
+      test = false;
+      break;
+    }
+  }
+  
+  a = Z( 2 );
+  if ( test ) {
+    while ( a < n ) {
+      if ( GCD( n, a ) == Z( 1 ) ) {
+        if ( a > Z( 2 ) ) {
+          
+        }
+      }
+      else {
+        test = false;
+        break;
+      }
+    }
+  }
+  return test;
 }
 
 template< typename Z >
@@ -94,20 +94,20 @@ PrimeField< Z > operator/ ( const Z& x, const Z& y );
 
 
 /*__________________________________________________________________________________________________
- *		Finite Field
+ *    Finite Field
  */
 template< typename Z = int >
 class FiniteField {
 public:
-	FiniteField( const Z& p, const Z& n );
-	~FiniteField();
-	Z generator( const Z& p, const Z& n ) const;
-	
+  FiniteField( const Z& p, const Z& n );
+  ~FiniteField();
+  Z generator( const Z& p, const Z& n ) const;
+  
 private:
-	static const Z prime;
-	static const Z power;
-	static const Z irred;
-	static const Z size;
+  static const Z prime;
+  static const Z power;
+  static const Z irred;
+  static const Z size;
 };
 
 template< typename Z >
@@ -123,7 +123,7 @@ template< typename Z >
 FiniteField< Z > operator/ ( const Z& x, const Z& y );
 
 /*__________________________________________________________________________________________________
- *		Sieve Methods
+ *    Sieve Methods
  */
 template< typename Z >
 std::list< Z > SieveSundaram( const Z& p, const Z& n );

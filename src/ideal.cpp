@@ -1,13 +1,13 @@
 /*__________________________________________________________________________________________________
 
-		autor: Pedro Guarderas
-		email: ajusworkopensource@gmail.com
-		date: 04-04-2013
-		file: ideal.cpp
+    autor: Pedro Guarderas
+    email: ajusworkopensource@gmail.com
+    date: 04-04-2013
+    file: ideal.cpp
  
-	This program is free software; you can redistribute it and/or modify it under the 
-	terms of the GNU General Public License as published by the Free Software Foundation; 
-	either version 2 of the License, or (at your option) any later version.
+  This program is free software; you can redistribute it and/or modify it under the 
+  terms of the GNU General Public License as published by the Free Software Foundation; 
+  either version 2 of the License, or (at your option) any later version.
 ____________________________________________________________________________________________________
 */
 
@@ -22,7 +22,7 @@ Ideal< Monomial_Order, Ring > Ideal< Monomial_Order, Ring >::LT() const
 
     for( it = this->begin(); it != this->end(); ++it )
     {
-	r.push_back( it->LT() );
+  r.push_back( it->LT() );
     }
 
     return r;
@@ -40,19 +40,19 @@ operator/ ( const Polynome< Monomial_Order, Ring >& x,
 
     do
     {
-	d = false;
+  d = false;
 
-	for( it = I.begin(); it != I.end(); ++it )
-	{
-	    d = it->LM() | r.LM();
+  for( it = I.begin(); it != I.end(); ++it )
+  {
+      d = it->LM() | r.LM();
 
-	    if( d )
-	    {
-		aux = ( r.LT() / it->LT() ) * ( *it );
-		r = r - aux;
-		g = g + aux;
-	    }
-	}
+      if( d )
+      {
+    aux = ( r.LT() / it->LT() ) * ( *it );
+    r = r - aux;
+    g = g + aux;
+      }
+  }
     }
     while( d );
 
