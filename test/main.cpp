@@ -19,8 +19,8 @@ ________________________________________________________________________________
 #include <cmath>
 #include <vector>
 
-#include "../src/polynome.hpp"
-#include "../src/unitary_monomial.hpp"
+#include "polynome.hpp"
+#include "unitary_monomial.hpp"
 //#include "fieldp.hpp"
 
 using namespace std;
