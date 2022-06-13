@@ -1,7 +1,7 @@
 /*__________________________________________________________________________________________________
 
     autor: Pedro Guarderas
-    email: ajusworkopensource@gmail.com
+    email: pedro.felipe.guarderas@gmail.com
     date: 04-04-2013
     file: unitary_monomial.hpp
  

@@ -1,7 +1,7 @@
 /*__________________________________________________________________________________________________
 
     autor: Pedro Guarderas
-    email: ajusworkopensource@gmail.com
+    email: pedro.felipe.guarderas@gmail.com
     date: 08-12-2012
     file: field.cpp
  
