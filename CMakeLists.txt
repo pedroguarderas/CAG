@@ -1,7 +1,7 @@
 #___________________________________________________________________________________________________
 # 
 #		autor: Pedro Guarderas
-#		email: ajusworkopensource@gmail.com
+#		email: pedro.felipe.guarderas@gmail.com
 #		date: 11-05-2013
 #		file: CMakeLists.txt
 #
@@ -13,7 +13,7 @@
 
 #___________________________________________________________________________________________________
 # Project definition
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required( VERSION 3.0 )
 
 set( CMAKE_MODULE_PATH 
   ${CMAKE_CURRENT_SOURCE_DIR}/cmake

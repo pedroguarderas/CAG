@@ -1,7 +1,7 @@
 #___________________________________________________________________________________________________
 # 
 #		autor: Pedro Guarderas
-#		email: ajusworkopensource@gmail.com
+#		email: pedro.felipe.guarderas@gmail.com
 #		date: 11-05-2013
 #		file: CMakeLists.txt
 #
