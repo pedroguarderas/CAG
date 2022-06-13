@@ -174,8 +174,7 @@ public:
   bool operator== ( const Polynome< Monomial_Order, Ring >& polynome ) const;
   bool operator!= ( const Polynome< Monomial_Order, Ring >& polynome ) const;
   
-  Polynome< Monomial_Order, Ring >& operator= ( const Polynome< Monomial_Order, Ring >& polynome
-);
+  Polynome< Monomial_Order, Ring >& operator= ( const Polynome< Monomial_Order, Ring >& polynome );
   Polynome< Monomial_Order, Ring >& operator+= ( const Polynome< Monomial_Order, Ring >& x );
   Polynome< Monomial_Order, Ring >& operator-= ( const Polynome< Monomial_Order, Ring >& x );
   Polynome< Monomial_Order, Ring >& operator*= ( std::pair< Unitary_Monomial, Ring >& x );
